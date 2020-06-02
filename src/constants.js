@@ -97,3 +97,5 @@ export const courses = {
 
     ]
 }
+
+export const clientId = "193611543127-anceh4akuiho83h6d9rlenqtark46fi0.apps.googleusercontent.com";
