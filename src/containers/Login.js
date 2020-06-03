@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import { GoogleLogin } from "react-google-login";
 //import { toast } from "react-toastify";
-//import { setObjectToLocal } from "../utils";
-import { clientId, imageData } from "../constants";
+import { setObjectToLocal } from "../utils";
+import { clientId } from "../constants";
 //import Loader from "react-loader-spinner";
 //import "./Login.css";
 
@@ -35,7 +35,7 @@ export default class Login extends PureComponent {
       imageUrl
     };
 
-    //setObjectToLocal("session", session);
+    setObjectToLocal("session", session);
     /* toast.success(`Login Successful. Welcome ${givenName}`, {
       position: toast.POSITION.TOP_RIGHT
     }); */
@@ -43,7 +43,7 @@ export default class Login extends PureComponent {
       this.setState({
         loading: false
       });
-      //this.props.history.push("/userprofile");
+      this.props.history.push("/");
     }, 1000);
   };
 

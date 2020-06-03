@@ -6,12 +6,12 @@ export default class CourseCard extends PureComponent {
         const { title='', description='', price="", image="", time="", degree=false } = this.props;
         return (
             <div className="course-card">
-                <img width={100} height={100} className="course-image" src={image} alt="" />
-                {degree && <Badge>DEGREE</Badge>}
-                <Badge>{time}</Badge>
-                <p style={{marginTop: 100}}>{title}</p>
-                <p>{description}</p>
-                <p>{price}</p>
+                <img width={100} height={100} className="image" src={image} alt="" />
+                {degree && <Badge className="degree"><img src={require('../assets/images/degree.png')} /> DEGREE</Badge>}
+                <Badge className="filled">{time}</Badge>
+                <p className="title">{title}</p>
+                <p className="description">{description}</p>
+                <p className="price">{price}</p>
             </div>
         )
     }

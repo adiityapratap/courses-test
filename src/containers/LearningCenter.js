@@ -82,7 +82,7 @@ export default class LearningCenter extends PureComponent {
                     </Row>
                     <Row>
                         <Col>
-                            <Slider {...settings}>
+                            <Slider className="course-slider" {...settings}>
                                 {
                                     selectedCourses.map(course => {
                                         return (

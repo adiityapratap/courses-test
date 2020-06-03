@@ -85,7 +85,38 @@ export const courses = {
         }
     ],
     "Communication": [
-
+        {
+            title: "English Communication",
+            description: "Get ready for computer science. Create graphical programs, learn computing...",
+            price: "RM9,99",
+            time: "20 HOURS",
+            degree: false,
+            image: require('./assets/images/MongoDB.png')
+        },
+        {
+            title: "Negotiation",
+            description: "Get ready for computer science. Create graphical programs, learn computing...",
+            price: "RM9,99",
+            time: "20 HOURS",
+            degree: true,
+            image: require('./assets/images/JS.png')
+        },
+        {
+            title: "Teamwork",
+            description: "Get ready for computer science. Create graphical programs, learn computing...",
+            price: "RM9,99",
+            time: "20 HOURS",
+            degree: false,
+            image: require('./assets/images/HTML5.png')
+        },
+        {
+            title: "Business Communication",
+            description: "Get ready for computer science. Create graphical programs, learn computing...",
+            price: "RM9,99",
+            time: "20 HOURS",
+            degree: true,
+            image: require('./assets/images/C.png')
+        },
     ],
     "Digital Arts": [
 
