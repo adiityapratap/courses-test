@@ -24,8 +24,18 @@ export default class LearningCenter extends PureComponent {
 
         const { active="" } = this.state;
 
-        const selectedCourses = courses[active];
+        let selectedCourses = [];
         
+        if(active !== "Explore all") {
+            selectedCourses = courses[active]
+        } 
+        else {
+            Object.keys(courses).forEach(course => {
+                selectedCourses.push(...courses[course]);
+            });
+        }
+
+        console.log(selectedCourses, "selectedCourses")
         var settings = {
             dots: true,
             infinite: true,
@@ -33,6 +43,8 @@ export default class LearningCenter extends PureComponent {
             slidesToShow: 4,
             slidesToScroll: 4,
             arrows: true,
+            nextArrow: <CustomController dir="right" />,
+            prevArrow: <CustomController dir="left" />,
             responsive: [
                 {
                     breakpoint: 1024,
@@ -58,7 +70,7 @@ export default class LearningCenter extends PureComponent {
                         slidesToScroll: 1
                     }
                 }
-            ] 
+            ]
         };
 
         return (
@@ -70,7 +82,7 @@ export default class LearningCenter extends PureComponent {
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="category-container">
+                        <Col xs={12} sm={12} md={12} className="category-container">
                             {
                                 categories.map(category => {
                                     return (
@@ -97,4 +109,12 @@ export default class LearningCenter extends PureComponent {
             </Container>
         )
     }
+}
+
+function CustomController({ dir, className, style, onClick }) {
+    return (
+        <div className={className} onClick={onClick}>
+            <i style={{ fontSize: 18, color: "#000" }} className={`fa fa-chevron-${dir}`}></i>
+        </div>
+    )
 }

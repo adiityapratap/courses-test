@@ -71,8 +71,7 @@ export default class Login extends PureComponent {
           <div className="width-50-2">
             <div className="login">
               <div style={{ textAlign: "center" }}>
-                <h2 className="loginLogo">
-                  <i className="fa fa-instagram" /> | Learning Center
+                <h2 className="loginLogo">Learning Center
                 </h2>
                 <GoogleLogin
                   style={{ alignSelf: "center" }}
