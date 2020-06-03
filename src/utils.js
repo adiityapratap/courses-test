@@ -1,6 +1,5 @@
 export const isLoggedIn = () => {
     let session = getSession();
-    //let token = session && session.token;
     return session;
 };
   

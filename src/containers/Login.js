@@ -1,10 +1,7 @@
 import React, { PureComponent } from "react";
 import { GoogleLogin } from "react-google-login";
-//import { toast } from "react-toastify";
 import { setObjectToLocal } from "../utils";
 import { clientId } from "../constants";
-//import Loader from "react-loader-spinner";
-//import "./Login.css";
 
 export default class Login extends PureComponent {
   constructor(props) {
@@ -36,9 +33,6 @@ export default class Login extends PureComponent {
     };
 
     setObjectToLocal("session", session);
-    /* toast.success(`Login Successful. Welcome ${givenName}`, {
-      position: toast.POSITION.TOP_RIGHT
-    }); */
     setTimeout(() => {
       this.setState({
         loading: false
@@ -48,9 +42,7 @@ export default class Login extends PureComponent {
   };
 
   onFailure = error => {
-    /* toast.error(error, {
-      position: toast.POSITION.TOP_RIGHT
-    }); */
+    console.log(error, "error");
   };
 
   onLogin = () => {
@@ -78,16 +70,9 @@ export default class Login extends PureComponent {
                   clientId={clientId}
                   onSuccess={this.onSuccess}
                   onFailure={this.onFailure}
-                  icon={loading ? false : true}
                   buttonText={
                     loading ? (
-                      /* <Loader
-                        type="ThreeDots"
-                        color="#CCC"
-                        height={40}
-                        width={40}
-                      /> */
-                      "Loading..."
+                      "Logging in..."
                     ) : (
                       "Login With Google"
                     )
